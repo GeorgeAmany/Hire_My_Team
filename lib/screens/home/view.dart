@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'components/item_home.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -59,7 +60,9 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding:  EdgeInsetsDirectional.only(start: 30.w ,),
+          padding: EdgeInsetsDirectional.only(
+            start: 30.w,
+          ),
           child: ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
@@ -71,13 +74,11 @@ class HomeScreen extends StatelessWidget {
               ),
               shadowColor: MaterialStatePropertyAll(Colors.white),
               elevation: MaterialStatePropertyAll(20),
-
             ),
             child: Text(
               'Publish Your Jobs',
               style: TextStyle(fontSize: 20.sp),
             ),
-
           ),
         ),
       ),
