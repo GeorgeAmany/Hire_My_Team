@@ -69,11 +69,15 @@ class HomeScreen extends StatelessWidget {
               backgroundColor: const MaterialStatePropertyAll(
                 Color(0xff5A55CA),
               ),
+              shadowColor: MaterialStatePropertyAll(Colors.white),
+              elevation: MaterialStatePropertyAll(20),
+
             ),
             child: Text(
               'Publish Your Jobs',
               style: TextStyle(fontSize: 20.sp),
             ),
+
           ),
         ),
       ),
