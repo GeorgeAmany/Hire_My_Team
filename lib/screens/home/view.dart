@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:play_with_api/screens/home/cubit.dart';
 import 'package:play_with_api/screens/home/states.dart';
-
 import '../job_detail/view.dart';
 import 'components/item_home.dart';
 

@@ -46,7 +46,7 @@ class JobDetail extends StatelessWidget {
                     width: 17.w,
                   ),
                   Text(
-                    'Job detail',
+                    'Job details',
                     style: TextStyle(fontSize: 20.sp, color: Colors.white),
                   ),
                 ],
@@ -102,6 +102,12 @@ class JobDetail extends StatelessWidget {
                         ),
                       ],
                     ),
+
+
+
+
+
+
                   ],
                 ),
               ),
