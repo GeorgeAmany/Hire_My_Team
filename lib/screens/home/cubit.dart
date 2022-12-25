@@ -1,7 +1,24 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:play_with_api/screens/home/states.dart';
 
-class JobCubit extends Cubit<JobStates>{
-  JobCubit(): super ( JobInitialState());
-  
+import 'model.dart';
+
+class JobCubit extends Cubit<JobStates> {
+  JobCubit() : super(JobInitialState());
+
+  static JobCubit getObject(context) => BlocProvider.of(context);
+  JobDetails? model;
+
+  Future<void> getJobDetails() async {
+    emit(GetJobLoadingState());
+    final response = await Dio()
+        .get('https://george-22084-default-rtdb.firebaseio.com/.json');
+    if(response.statusCode != 500 && response.statusCode != 404 ){
+      model = response.data;
+      emit(GetJobSuccessState());
+    }else {
+      emit(GetJobFailedState());
+    }
+  }
 }
