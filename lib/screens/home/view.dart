@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:play_with_api/screens/home/cubit.dart';
 import 'package:play_with_api/screens/home/states.dart';
 
+import '../job_detail/view.dart';
 import 'components/item_home.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -62,9 +63,20 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     child: ListView.builder(
-                      itemBuilder: (context, index) => ItemHome(
-                        nameOfJob: cubit.model!.jobs[index],
-                        nameOfCompany: cubit.model!.companies[index],
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => JobDetail(
+                              nameOfSelectedJob: cubit.model!.jobs[index],
+                              nameOfSelectedCompany: cubit.model!.companies[index],
+                            ),
+                          ),
+                        ),
+                        child: ItemHome(
+                          nameOfJob: cubit.model!.jobs[index],
+                          nameOfCompany: cubit.model!.companies[index],
+                        ),
                       ),
                       itemCount: cubit.model!.jobs.length,
                       shrinkWrap: true,
@@ -82,21 +94,24 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsetsDirectional.only(
                 start: 30.w,
               ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  fixedSize: MaterialStatePropertyAll(
-                    Size(270.w, 40.h),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.r),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    fixedSize: MaterialStatePropertyAll(
+                      Size(270.w, 40.h),
+                    ),
+                    backgroundColor: const MaterialStatePropertyAll(
+                      Color(0xff5A55CA),
+                    ),
+                    shadowColor: const MaterialStatePropertyAll(Colors.white),
+                    elevation: const MaterialStatePropertyAll(20),
                   ),
-                  backgroundColor: const MaterialStatePropertyAll(
-                    Color(0xff5A55CA),
+                  child: Text(
+                    'Publish Your Jobs',
+                    style: TextStyle(fontSize: 20.sp),
                   ),
-                  shadowColor: const MaterialStatePropertyAll(Colors.white),
-                  elevation: const MaterialStatePropertyAll(20),
-                ),
-                child: Text(
-                  'Publish Your Jobs',
-                  style: TextStyle(fontSize: 20.sp),
                 ),
               ),
             ),

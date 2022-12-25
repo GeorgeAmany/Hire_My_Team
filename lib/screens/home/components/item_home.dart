@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemHome extends StatelessWidget {
-  final String nameOfJob , nameOfCompany;
-  const ItemHome({Key? key, required this.nameOfJob, required this.nameOfCompany}) : super(key: key);
+  final String nameOfJob, nameOfCompany;
+
+  const ItemHome(
+      {Key? key, required this.nameOfJob, required this.nameOfCompany})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +29,21 @@ class ItemHome extends StatelessWidget {
                 'Bangalore | Full Time',
                 style: TextStyle(fontSize: 12.sp),
               ),
-              Spacer(),
-              InkWell(
-                child: Container(
-                  width: 22.w,
-                  height: 22.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff5A55CA),
-                    borderRadius: BorderRadius.circular(40.r),
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.white,
-                      size: 15,
-                    ),
+              const Spacer(),
+              Container(
+                width: 22.w,
+                height: 22.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff5A55CA),
+                  borderRadius: BorderRadius.circular(40.r),
+                ),
+                child: const Center(
+                  child: Icon(
+                    Icons.arrow_forward_ios_sharp,
+                    color: Colors.white,
+                    size: 15,
                   ),
                 ),
-                onTap: () {},
               ),
             ],
           ),
@@ -54,7 +54,7 @@ class ItemHome extends StatelessWidget {
                 style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
               ),
               Text(
-                nameOfCompany ,
+                nameOfCompany,
                 style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.bold,
@@ -65,7 +65,6 @@ class ItemHome extends StatelessWidget {
           ),
           SizedBox(height: 15.h),
           const Divider(thickness: 3),
-
         ],
       ),
     );
