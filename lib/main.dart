@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'screens/login/view.dart';
 import 'screens/splash/view.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
         ),
         debugShowCheckedModeBanner: false,
-        home: const SplashScreen(),
+        home: const LoginScreen(),
       ),
     );
   }

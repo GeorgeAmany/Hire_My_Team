@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import '../home/view.dart';
+import 'package:play_with_api/screens/login/view.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: AnimatedSplashScreen(
         splash: 'assets/images/splash.png',
-        nextScreen: const HomeScreen(),
+        nextScreen: const LoginScreen(),
         splashTransition: SplashTransition.rotationTransition,
         backgroundColor: const Color(0xff5A55CA),
         animationDuration: const Duration(seconds: 5),
