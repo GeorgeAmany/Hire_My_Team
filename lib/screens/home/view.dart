@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:play_with_api/screens/home/cubit.dart';
 import 'package:play_with_api/screens/home/states.dart';
+import 'package:play_with_api/screens/login/view.dart';
 import '../job_details/view.dart';
 import 'components/item_home.dart';
 
@@ -23,6 +24,43 @@ class HomeScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.vertical,
               children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.only(start: 40.w, top: 20.h),
+                  child: Row(
+                    children: [
+                      InkWell(
+                        child: Container(
+                          width: 22.w,
+                          height: 22.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(40.r),
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.arrow_back_ios_outlined,
+                              color: Colors.black,
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute (
+                            builder: (BuildContext context) => const LoginScreen(),
+                          ),
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        width: 17.w,
+                      ),
+                      Text(
+                        'LOGOUT',
+                        style: TextStyle(fontSize: 20.sp, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsetsDirectional.only(start: 40.w, top: 50.h),
                   child: Text(
