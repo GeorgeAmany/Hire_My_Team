@@ -72,13 +72,11 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             cubit.login();
                             if (state is LoginSuccessState) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const HomeScreen(),
-                                ),
-                              );
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          const HomeScreen()));
                             }
                           },
                           style: ButtonStyle(

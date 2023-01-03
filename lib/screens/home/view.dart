@@ -26,10 +26,10 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.only(start: 40.w, top: 20.h),
-                  child: Row(
-                    children: [
-                      InkWell(
-                        child: Container(
+                  child: InkWell(
+                    child: Row(
+                      children: [
+                        Container(
                           width: 22.w,
                           height: 22.h,
                           decoration: BoxDecoration(
@@ -44,21 +44,25 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute (
-                            builder: (BuildContext context) => const LoginScreen(),
-                          ),
-                          );
-                        },
-                      ),
-                      SizedBox(
-                        width: 17.w,
-                      ),
-                      Text(
-                        'LOGOUT',
-                        style: TextStyle(fontSize: 20.sp, color: Colors.white),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 17.w,
+                        ),
+                        Text(
+                          'LOGOUT',
+                          style:
+                              TextStyle(fontSize: 20.sp, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const LoginScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
@@ -106,7 +110,8 @@ class HomeScreen extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (BuildContext context) => JobDetail(
                               nameOfSelectedJob: cubit.model!.jobs[index],
-                              nameOfSelectedCompany: cubit.model!.companies[index],
+                              nameOfSelectedCompany:
+                                  cubit.model!.companies[index],
                             ),
                           ),
                         ),
