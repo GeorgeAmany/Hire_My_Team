@@ -18,12 +18,12 @@ class JobDetail extends StatelessWidget {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.only(start: 40.w, top: 20.h),
-              child: Row(
-                children: [
-                  InkWell(
-                    child: Container(
+            InkWell(
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(start: 40.w, top: 20.h),
+                child: Row(
+                  children: [
+                    Container(
                       width: 22.w,
                       height: 22.h,
                       decoration: BoxDecoration(
@@ -38,19 +38,19 @@ class JobDetail extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  SizedBox(
-                    width: 17.w,
-                  ),
-                  Text(
-                    'Job details',
-                    style: TextStyle(fontSize: 20.sp, color: Colors.white),
-                  ),
-                ],
+                    SizedBox(
+                      width: 17.w,
+                    ),
+                    Text(
+                      'Job details',
+                      style: TextStyle(fontSize: 20.sp, color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
             SizedBox(height: 50.h),
             Padding(
