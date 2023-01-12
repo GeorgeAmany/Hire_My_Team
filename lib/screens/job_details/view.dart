@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobDetail extends StatelessWidget {
-  final String nameOfSelectedJob, nameOfSelectedCompany;
+  final String nameOfSelectedJob, nameOfSelectedCompany , textBody;
 
   const JobDetail(
       {Key? key,
       required this.nameOfSelectedJob,
-      required this.nameOfSelectedCompany})
+      required this.nameOfSelectedCompany, required this.textBody})
       : super(key: key);
 
   @override
@@ -71,7 +71,7 @@ class JobDetail extends StatelessWidget {
             SizedBox(height: 26.h),
             Container(
               width: 390.w,
-              height: 600.h,
+              height: 800.h,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadiusDirectional.only(
@@ -102,7 +102,12 @@ class JobDetail extends StatelessWidget {
                         ),
                       ],
                     ),
-
+                    SizedBox(height: 15.h,),
+                    Text(
+                      textBody,
+                      style: TextStyle(fontSize: 18.sp, color: Colors.black ,),
+                      textAlign: TextAlign.values.first,
+                    ),
 
                   ],
                 ),

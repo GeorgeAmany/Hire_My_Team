@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.only(start: 40.w, top: 50.h),
+                  padding: EdgeInsetsDirectional.only(start: 40.w, top: 40.h),
                   child: Text(
                     'Welcome',
                     style: TextStyle(fontSize: 24.sp, color: Colors.white),
@@ -111,8 +111,8 @@ class HomeScreen extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (BuildContext context) => JobDetail(
                               nameOfSelectedJob: cubit.model!.jobs[index],
-                              nameOfSelectedCompany:
-                                  cubit.model!.companies[index],
+                              nameOfSelectedCompany: cubit.model!.companies[index],
+                              textBody: cubit.model!.description[index],
                             ),
                           ),
                         ),
