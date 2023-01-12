@@ -9,6 +9,8 @@ class LoginCubit extends Cubit<LoginStates> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  bool isHidden = true;
+
   static LoginCubit getObject(context) => BlocProvider.of(context);
 
   Future<void> login() async {
@@ -31,6 +33,10 @@ class LoginCubit extends Cubit<LoginStates> {
       emit(LoginFailedState());
     }
 
+  }
+
+  password(){
+    isHidden = !isHidden;
     emit(PassState());
   }
 }

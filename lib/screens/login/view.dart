@@ -5,15 +5,9 @@ import 'package:play_with_api/screens/home/view.dart';
 import 'package:play_with_api/screens/login/cubit.dart';
 import 'package:play_with_api/screens/login/states.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  bool isHidden = true;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -58,23 +52,26 @@ class _LoginScreenState extends State<LoginScreen> {
                       onChanged: (value) => cubit.login(),
                     ),
                     SizedBox(height: 38.h),
-                    TextFormField(
-                      obscureText: isHidden,
-                      decoration:InputDecoration(
-                        label: const Text("Enter password"),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            isHidden = !isHidden;
-                            setState(() {
-                            });
-                          },
-                          icon: Icon(
-                              isHidden ? Icons.visibility_off:Icons.visibility ,
+                    BlocBuilder<LoginCubit, LoginStates>(
+                      builder: (context ,state) {
+                        return TextFormField(
+                          obscureText: cubit.isHidden,
+                          controller: cubit.passwordController,
+                          onChanged: (value) => cubit.login(),
+                          decoration:InputDecoration(
+                            label: const Text("Enter password"),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                cubit.password();
+                              },
+                              icon: Icon(
+                                  cubit.isHidden ? Icons.visibility_off:Icons.visibility ,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      controller: cubit.passwordController,
-                      onChanged: (value) => cubit.login(),
+
+                        );
+                      }
                     ),
                     SizedBox(
                       height: 100.h,
