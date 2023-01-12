@@ -3,10 +3,11 @@ class JobDetails {
     required this.companies,
     required this.jobs,
   });
+
   late final List<String> companies;
   late final List<String> jobs;
 
-  JobDetails.fromJson(Map<String, dynamic> json){
+  JobDetails.fromJson(Map<String, dynamic> json) {
     companies = List.castFrom<dynamic, String>(json['companies']);
     jobs = List.castFrom<dynamic, String>(json['jobs']);
   }

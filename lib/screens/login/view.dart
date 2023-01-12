@@ -63,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                             suffixIcon: IconButton(
                               onPressed: () {
                                 cubit.password();
+                                cubit.login();
                               },
                               icon: Icon(
                                   cubit.isHidden ? Icons.visibility_off:Icons.visibility ,

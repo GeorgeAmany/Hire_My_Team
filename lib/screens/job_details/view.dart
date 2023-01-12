@@ -102,6 +102,8 @@ class JobDetail extends StatelessWidget {
                         ),
                       ],
                     ),
+
+
                   ],
                 ),
               ),

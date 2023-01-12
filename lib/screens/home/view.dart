@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:play_with_api/screens/home/cubit.dart';
 import 'package:play_with_api/screens/home/states.dart';
 import 'package:play_with_api/screens/login/view.dart';
+
 import '../job_details/view.dart';
 import 'components/item_home.dart';
 
